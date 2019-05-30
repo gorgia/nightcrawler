@@ -1,0 +1,3 @@
+permanentblock = ci impegniamo al massimo per assicurare che tutte le persone su Facebook possano usare la loro identità reale | real identity
+pagenotavailable = questa pagina non è disponibile | questo contenuto non è al momento disponibile | This page isn't available | Page Not Found | link che hai seguito sia corrotto o che la pagina sia stata rimossa. | This isn't an active profile. | Questo profilo non è attivo. | Non disponi dell'autorizzazione | No permission to access this profile | Sorry, this content isn't available right now
+temporalyblocked = temporaneamente bloccato | temporarily blocked
