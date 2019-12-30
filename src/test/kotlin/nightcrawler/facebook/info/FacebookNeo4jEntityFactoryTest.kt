@@ -29,7 +29,7 @@ class FacebookNeo4jEntityFactoryTest {
     @Autowired
     lateinit var facebookAccountSplitLoader: FacebookAccountSplitLoader
 
-    var facebookId = "mouhamed.bouchriha.1"
+    var facebookId = "facebookIdHere"
 
     var facebookEntityClass = FacebookPost::class.java
 

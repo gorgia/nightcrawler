@@ -38,7 +38,7 @@ class MailSenderTest {
         mimeBodyPart.setContent(htmlText, "text/html; charset=UTF-8")
         multipart.addBodyPart(mimeBodyPart)
 
-        val recipients = setOf("gorgia@fastwebnet.it")
-        MailSender.sendMail(recipients, emptySet(), "socialnet@octopus.org", subject, multipart)
+        val recipients = setOf("xxxxx@fastwebnet.it")
+        MailSender.sendMail(recipients, emptySet(), "socialnet@xxxxxxx.org", subject, multipart)
     }
 }

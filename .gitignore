@@ -8,6 +8,6 @@
 .idea/
 gradlew
 gradlew.bat
-/test/resources
+src/test/resources
 
 somefile.txt

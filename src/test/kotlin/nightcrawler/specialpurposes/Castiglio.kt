@@ -43,44 +43,13 @@ class Castiglio {
     lateinit var facebookBusinessPageRepo: FacebookBusinessPageRepository
 
 
-    val targetsArray = arrayOf("1178933415531366",
-            "71523830069",
-            "209101162445115",
-            "149286979159815",
-            "34946748533",
-            "1535276726770711",
-            "1543112012588766",
-            "34232182428",
-            "151694314094",
-            "211401918930049",
-            "937443906286455",
-            "598009293601112",
-            "157458232131",
-            "1104611692991924",
-            "540404695989874",
-            "268232929583",
-            "534241563377494",
-            "170144266811102",
-            "460178247453718",
-            "193902102841",
-            "158945334122993",
-            "344957848932767",
-            "1968333916757498",
-            "257153365332",
-            "2248169958741497",
-            "1464364850517570",
-            "258753614601457",
-            "235458289826406",
-            "368748019896548",
-            "212709232229746",
-            "176831138994085",
-            "418142194971275")
+    val targetsArray = arrayOf("insert facebook id here")
 
     @Test
     fun prova() {
         val pairList = creaCoppie()
         val pool = Executors.newFixedThreadPool(2)
-        pairList.forEach({ pool.submit({ this.eseguiRicerca(it) }) })
+        pairList.forEach { pool.submit({ this.eseguiRicerca(it) }) }
         try {
             pool.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS)
         } catch (e: Exception) {
@@ -102,7 +71,7 @@ class Castiglio {
 
     fun eseguiRicerca(coppiaDiId: Pair<String, String>) {
         val url = "https://www.facebook.com/search/${coppiaDiId.first}/likers/${coppiaDiId.second}/likers/intersect"
-        File("castiglione-destra.txt").appendText(url + "\n")
+        File("output-destra.txt").appendText(url + "\n")
 
         val likers = ctx.getBean(SearchGrabber::class.java).process(url)
         if (!likers.isEmpty()) {
