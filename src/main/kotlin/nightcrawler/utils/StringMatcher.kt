@@ -19,10 +19,6 @@ object StringMatcher {
     }
 
 
-    fun matchAny(toMatch: String, againstRef: String) : Boolean{
-        return stringReference[againstRef]!!.any { toMatch == it }
-    }
-
     fun containsAny(toMatch: String, againstRef: String): Boolean {
         val referencedSet = StringMatcher.stringReference[againstRef]
         return referencedSet?.any {
