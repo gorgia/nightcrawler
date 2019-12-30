@@ -15,20 +15,20 @@ import java.util.concurrent.TimeUnit
 open class FIND : WebDriverCommand() {
 
     override fun execute(): Any? {
-        var by: By? = params["by"] as By?
-        var timeout : Int = params["timeout"] as Int? ?: 40
-        var pollingEvery : Int = params["pollingEvery"] as Int? ?: 5
+        //var by: By? = params["by"] as By?
+        // var timeout : Int = params["timeout"] as Int? ?: 40
+        // var pollingEvery : Int = params["pollingEvery"] as Int? ?: 5
 
-        if (by == null)
+        /*if (by == null)
             by = if (params["cssSelector"] != null) By.cssSelector(params["cssSelector"] as String) else null
-
+*/
         return true
     }
 
 
 }
 
-
+/*
 fun WebDriver.findElementsWithFuentWait(by: By, timeoutSeconds: Int = 40, pollingEverySeconds: Int = 5): List<WebElement> {
     val wait = FluentWait<WebDriver>(this)
             .withTimeout(20, TimeUnit.SECONDS)
@@ -40,4 +40,4 @@ fun WebDriver.findElementsWithFuentWait(by: By, timeoutSeconds: Int = 40, pollin
     }
     return wait.until(function)
 
-}
+}*/

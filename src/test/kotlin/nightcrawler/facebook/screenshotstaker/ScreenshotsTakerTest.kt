@@ -20,6 +20,7 @@ import nightcrawler.utils.log
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.openqa.selenium.By
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -110,7 +111,8 @@ class ScreenshotsTakerTest {
                 return
             }
             val elementToBlur = crawler.webDriver.findElement(By.xpath("//div[@role=\"navigation\"]"))
-            crawler.webDriver.takeScreenshot(baseFolder + "page.png", fullpage = true, elementsToBlur = elementToBlur)
+            val elementsToBlur :Array<WebElement> = arrayOf(elementToBlur)
+            crawler.webDriver.takeScreenshot(baseFolder + "page.png", fullpage = true, elementsToBlur = *elementsToBlur)
         } catch(e: Exception) {
             log().info("Exception", e)
         } finally {

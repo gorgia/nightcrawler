@@ -38,7 +38,18 @@ class FacebookLoginner {
     internal val facebookBaseUrl = "https://www.facebook.com"
 
     fun login(crawler: Crawler, loginWithCookies: Boolean = true): FacebookLoginAccount {
+        return login(crawler, getRandomAvailableAccount(), loginWithCookies)
+    }
+
+    fun loginByIp(crawler: Crawler, loginWithCookies: Boolean = true): FacebookLoginAccount {
         return login(crawler, ExternalIpExtractor.getExternalIp(crawler), loginWithCookies)
+    }
+
+
+    fun getRandomAvailableAccount () : FacebookLoginAccount{
+        val availableAccount : MutableList<FacebookLoginAccount> = flam.getAllAvailableAccounts().toMutableList()
+        availableAccount.shuffle()
+        return availableAccount.first()
     }
 
     fun login(crawler: Crawler, ip: String, loginWithCookies: Boolean = true): FacebookLoginAccount {
@@ -58,7 +69,7 @@ class FacebookLoginner {
         return facebookLoginAccount
     }
 
-    fun login(crawler: Crawler, fla: FacebookLoginAccount, loginWithCookies: Boolean = false) {
+    fun login(crawler: Crawler, fla: FacebookLoginAccount, loginWithCookies: Boolean = false) : FacebookLoginAccount {
         var isLogged = false
         if (loginWithCookies) {
             if (fla.loginCookies?.isNotEmpty() == true) {
@@ -72,6 +83,7 @@ class FacebookLoginner {
         }
         if (!isLogged)
             log().error("Impossible to login with user: ${fla.username}")
+        return fla
     }
 
 

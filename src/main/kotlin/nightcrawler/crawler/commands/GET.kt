@@ -28,7 +28,7 @@ open class GET : WebDriverCommand() {
                     this.webDriver!!.get(url)
                     this.waitForPageToLoad()
                     if (checkUrl && this.webDriver!!.currentUrl == previousUrl) {
-                        throw PageNotReachableException(url!!)
+                        throw PageNotReachableException(url)
                     }
                 }
             } catch(e: Exception) {

@@ -58,7 +58,7 @@ repositories {
 
 jar {
     manifest {
-        attributes 'Description': 'Nightcrawler october 2017'
+        attributes 'Description': 'Nightcrawler dicember 2018'
         attributes  'Main-Class' : 'nightcrawler.ApplicationNightcrawlerKt'
     }
 }

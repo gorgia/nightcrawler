@@ -1,6 +1,6 @@
 package nightcrawler.facebook.info
 
-import kotlinx.coroutines.experimental.Runnable
+import kotlinx.coroutines.Runnable
 import nightcrawler.facebook.targetmanager.MongoTargetManager
 import nightcrawler.utils.log
 import org.springframework.beans.factory.annotation.Autowired
